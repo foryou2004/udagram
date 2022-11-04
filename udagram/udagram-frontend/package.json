@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
+  "engines": {
+    "node": "16.17.0"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "deploy": "npm install -f && npm run build && chmod +x bin/deploy.sh && bin/deploy.sh",
+    "deploy": "npm install -f && npm run build && aws s3 cp --recursive  ./www s3://ahmed-udagram/",
     "test": "ng test --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
